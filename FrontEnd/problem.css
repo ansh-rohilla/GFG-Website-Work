@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #121212;
+  color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  color: #00a65a;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background-color: #1c1c1c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  color: #00a65a;
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.navbar nav a {
+  margin: 0 15px;
+  color: #f2f2f2;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+  color: #00a65a;
+}
+
+/* ---------- Filter Bar ---------- */
+.filter-bar {
+  margin: 20px 40px 0 40px;
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.filter-bar h3 {
+  color: #00a65a;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: #292929;
+  color: #f2f2f2;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.tag:hover {
+  background-color: #00a65a;
+  color: #000;
+}
+
+.tag.active {
+  background-color: #00a65a;
+  color: #000;
+}
+
+/* ---------- Main Content ---------- */
+.problem-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+}
+
+.problem-section,
+.editor-section {
+  background: #1f1f1f;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.problem-section h2,
+.editor-section h2 {
+  margin-bottom: 15px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1c1c1c;
+  color: #aaa;
+  margin-top: 40px;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 900px) {
+  .problem-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
