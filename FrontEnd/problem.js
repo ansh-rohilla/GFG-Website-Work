@@ -12,14 +12,11 @@ function initTheme() {
     body.classList.remove("light-theme");
   }
 
-  // Update button icon/text to reflect opposite action (what clicking will do)
   function updateThemeBtn() {
     if (body.classList.contains("light-theme")) {
-      // show moon to indicate switch to dark
       themeBtn.textContent = "🌙";
       themeBtn.title = "Switch to Dark";
     } else {
-      // show sun to indicate switch to light
       themeBtn.textContent = "☀";
       themeBtn.title = "Switch to Light";
     }
@@ -77,7 +74,6 @@ int main() {
     else if (lang === "java") editor.session.setMode("ace/mode/java");
     else if (lang === "js") editor.session.setMode("ace/mode/javascript");
 
-    // replace content with template for demo (only if editor is empty or holds previous template)
     const current = editor.getValue().trim();
     if (current === "" || current.startsWith("#include") || current.startsWith("print(") || current.includes("Hello from")) {
       editor.setValue(templates[lang], -1);
@@ -139,7 +135,6 @@ function initTags() {
       document.querySelectorAll(".tag").forEach(t => t.classList.remove("active"));
       tag.classList.add("active");
       console.log("Selected Tag:", tag.textContent);
-      // future: filter problems by tag
     });
   });
 }
@@ -149,11 +144,11 @@ window.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initTags();
 
-  // initialize Ace - it may be loaded already by CDN; ensure it's ready
+  // initialize Ace 
   if (window.ace) {
     initEditor();
   } else {
-    // wait a short time for ace script to load (rare cases)
+    // wait a short time for loading
     const id = setInterval(() => {
       if (window.ace) {
         clearInterval(id);
