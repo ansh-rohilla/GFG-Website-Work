@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Problem Solving Page | GFG MITADT</title>
 
+  <!-- Link CSS -->
   <link rel="stylesheet" href="problem.css" />
 </head>
 <body>
@@ -12,11 +13,12 @@
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg" 
-           alt="GFG Logo" 
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg"
+           alt="GFG Logo"
            style="height: 28px; vertical-align: middle; margin-right: 8px;">
-      MITADT
+      Geeks For Geeks - MIT ADT Student Chapter
     </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="problem-page.html" class="active">Solve Problems</a>
@@ -24,6 +26,9 @@
       <a href="#">Team</a>
       <a href="#">Contact</a>
     </nav>
+
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">☀</button>
   </header>
 
   <!-- Filter Bar -->
@@ -42,18 +47,84 @@
 
   <!-- Main Content -->
   <main class="problem-container">
+
+    <!-- Left: Problem Section -->
     <section class="problem-section">
       <h2>Problem Statement - Heading</h2>
-      <p>
-        <strong>This section will contain the problem statement, constraints, requirements and examples.</strong>
-      </p>
+
+      <div class="problem-meta">
+        <span><strong>Time limit:</strong> 1s</span> &nbsp;|&nbsp;
+        <span><strong>Memory:</strong> 256 MB</span>
+      </div>
+
+      <div class="problem-body" style="margin-top:12px;">
+        <p>
+          <strong>This section will contain the problem statement, constraints, requirements and examples.</strong>
+        </p>
+
+        <div class="section-title" style="margin-top:16px; color: var(--accent); font-weight:600;">
+          Input
+        </div>
+        <pre class="io-sample">n = 4
+nums = [2,7,11,15]
+target = 9</pre>
+
+        <div class="section-title" style="margin-top:12px; color: var(--accent); font-weight:600;">
+          Output
+        </div>
+        <pre class="io-sample">[0, 1]</pre>
+
+        <div class="section-title" style="margin-top:12px; color: var(--accent); font-weight:600;">
+          Tags
+        </div>
+        <div style="margin-top:8px;">
+          <span class="chip">Array</span>
+          <span class="chip">Hash Map</span>
+          <span class="chip easy">Easy</span>
+        </div>
+      </div>
     </section>
 
+    <!-- Right: Code Editor Section -->
     <section class="editor-section">
-      <h2>Code Editor</h2>
-      <p>
-        <strong>The code editor area where users can type and run their code.</strong>
-      </p>
+
+      <div class="editor-top">
+        <div class="editor-title">
+          <h2>Code Editor</h2>
+          <div class="meta" style="margin-left:12px;">Language:
+            <select id="lang-select">
+              <option value="cpp">C++ (g++)</option>
+              <option value="python">Python 3</option>
+              <option value="java">Java</option>
+              <option value="js">JavaScript (Node)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="editor-actions">
+          <button id="run-btn" class="btn run" title="Run (frontend demo)">▶ Run</button>
+          <button id="reset-btn" class="btn reset" title="Reset editor">Reset</button>
+          <button id="copy-btn" class="btn" title="Copy code">Copy</button>
+        </div>
+      </div>
+
+      <!-- Ace Editor Container -->
+      <div id="editor" style="height:320px; border-radius:8px; overflow:hidden;"></div>
+
+      <!-- Custom Input -->
+      <label class="stdin-label" for="stdin">Custom Input (stdin)</label>
+      <textarea id="stdin" class="stdin" placeholder="Enter input (optional)..."></textarea>
+
+      <!-- Output Console -->
+      <div class="console">
+        <div class="console-header">Output</div>
+        <pre id="output" class="console-body">No output yet. Click Run.</pre>
+      </div>
+
+      <div class="note" style="margin-top:10px;">
+        <small><strong>Note:</strong> This is a frontend demo. Backend execution will be added later.</small>
+      </div>
+
     </section>
   </main>
 
@@ -62,6 +133,11 @@
     <p>© 2025 GeeksforGeeks Student Chapter MIT-ADT. All rights reserved.</p>
   </footer>
 
+  <!-- Ace Editor CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+
+  <!-- Custom JS -->
   <script src="problem.js"></script>
+
 </body>
 </html>
